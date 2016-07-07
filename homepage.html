@@ -13,5 +13,40 @@
 			<a href="#">Search</a> |
 			<a href="about.html">About Us</a>
 		</div>
+
+		<div id="searchSection">
+			<h2>Search For Used Textbooks Now</h2>
+			<form action="#">
+				School: <br/>
+				<select name="school">
+					<option value="athabasca">Athabasca University</option>
+					<option value="mcmaster">McMaster University</option>
+					<option value="waterloo">University of Waterloo</option>
+					<option value="toronto">University of Toronto</option>
+					<option value="britishcolumbia">University of British Columbia</option>
+				</select>
+				<br/>
+				Department: <br/>
+				<select name="department">
+					<!-- Will be loaded through AJAX calls after previous is selected -->
+					<option value="arts">Arts</option>
+					<option value="science">Science</option>
+					<option value="compsci">Computer Science</option>
+					<option value="business">Business</option>
+					<option value="english">English</option>
+				</select>
+				<br/>
+				Course Code: <br/>
+				<select name="courseCode">
+					<!-- Will be loaded through AJAX calls after previous is selected -->
+					<option value="1AB3">1AB3</option>
+					<option value="2AB3">2AB3</option>
+					<option value="3AK3">3AK3</option>
+					<option value="2EN3">2EN3</option>
+				</select>
+				<br/>
+				<input type="submit" value="Search">
+			</form>
+		</div>
 	</body>
 </html>
