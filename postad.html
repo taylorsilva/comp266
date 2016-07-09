@@ -13,7 +13,51 @@
 			<a href="#">Search</a> |
 			<a href="about.html">About Us</a>
 		</div>
-		
+
+		<h2>Post New Ad</h2>
+		<div>
+			<form action="#">
+				<span>First Name</span> <br>
+				<input type="text" name="firstName"> <br>
+				<span>Email</span> <br>
+				<input type="text" name="email"> <br>
+				<span>Textbook Title</span> <br>
+				<input type="text" name="title"> <br>
+				<span>Price</span> <br>
+				<input type="number" name="price"> <br>
+				<span>School</span> <br>
+				<select name="school">
+					<option value="athabasca">Athabasca University</option>
+					<option value="mcmaster">McMaster University</option>
+					<option value="waterloo">University of Waterloo</option>
+					<option value="toronto">University of Toronto</option>
+					<option value="britishcolumbia">University of British Columbia</option>
+				</select> <br>
+				<span>Department</span> <br>
+				<select name="department">
+					<!-- Will be loaded through AJAX calls after previous input is selected -->
+					<option value="arts">Arts</option>
+					<option value="science">Science</option>
+					<option value="compsci">Computer Science</option>
+					<option value="business">Business</option>
+					<option value="english">English</option>
+				</select> <br>
+				<span>Course Code</span> <br>
+				<select name="courseCode">
+					<!-- Will be loaded through AJAX calls after previous input is selected -->
+					<option value="1AB3">1AB3</option>
+					<option value="2AB3">2AB3</option>
+					<option value="3AK3">3AK3</option>
+					<option value="2EN3">2EN3</option>
+				</select> <br>
+				<span>Description</span> <br>
+				<textarea name="description" rows="4" columns="8"></textarea> <br>
+				<span>Photo(s)</span> <br>
+				<input type="file" name="pics" accept="image/*" multiple> <br>
+				<input type="submit" value="Submit Ad">
+			</form>
+		</div>
+		<br>
 		<div>
 			<a href="about.html">About Us</a> |
 			&copy; 2016 Textbook Xchange
