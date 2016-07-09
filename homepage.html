@@ -17,7 +17,7 @@
 		<div id="searchSection">
 			<h2>Search For Used Textbooks Now</h2>
 			<form action="#">
-				School: <br/>
+				<span id="schoolLabel">School:</span> <br/>
 				<select name="school">
 					<option value="athabasca">Athabasca University</option>
 					<option value="mcmaster">McMaster University</option>
@@ -26,7 +26,7 @@
 					<option value="britishcolumbia">University of British Columbia</option>
 				</select>
 				<br/>
-				Department: <br/>
+				<span id="departmentLabel">Department:</span> <br/>
 				<select name="department">
 					<!-- Will be loaded through AJAX calls after previous is selected -->
 					<option value="arts">Arts</option>
@@ -36,7 +36,7 @@
 					<option value="english">English</option>
 				</select>
 				<br/>
-				Course Code: <br/>
+				<span id="courseLabel">Course Code:</span> <br/>
 				<select name="courseCode">
 					<!-- Will be loaded through AJAX calls after previous is selected -->
 					<option value="1AB3">1AB3</option>
