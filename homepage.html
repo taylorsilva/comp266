@@ -19,8 +19,8 @@
 		<div id="searchSection">
 			<h2>Search For Used Textbooks Now</h2>
 			<form action="#">
-				<span id="schoolLabel">School:</span> <br>
-				<select name="school">
+				<label for="school">School:</label> <br>
+				<select name="school" id="school" required aria-required="true">
 					<option value="athabasca">Athabasca University</option>
 					<option value="mcmaster">McMaster University</option>
 					<option value="waterloo">University of Waterloo</option>
@@ -28,8 +28,8 @@
 					<option value="britishcolumbia">University of British Columbia</option>
 				</select>
 				<br>
-				<span id="departmentLabel">Department:</span> <br>
-				<select name="department">
+				<label for="department">Department:</label> <br>
+				<select name="department" id="department" required aria-required="true">
 					<!-- Will be loaded through AJAX calls after previous is selected -->
 					<option value="arts">Arts</option>
 					<option value="science">Science</option>
@@ -38,8 +38,8 @@
 					<option value="english">English</option>
 				</select>
 				<br>
-				<span id="courseLabel">Course Code:</span> <br>
-				<select name="courseCode">
+				<label for="coursecode">Course Code:</label> <br>
+				<select name="courseCode" id="coursecode" required aria-required="true">
 					<!-- Will be loaded through AJAX calls after previous is selected -->
 					<option value="1AB3">1AB3</option>
 					<option value="2AB3">2AB3</option>
