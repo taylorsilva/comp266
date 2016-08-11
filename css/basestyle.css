@@ -76,3 +76,36 @@ a.siteHeader {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
+/* Search Section on homepage */
+
+div.searchSection {
+	text-align: center;
+	padding-top: 30px;
+}
+
+span.searchSection {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+input.searchSection {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 8px;
+	color: #ffffff;
+	font-size: 25px;
+	background-color: #4A90E2;
+	border-style: none;
+}
+
+input.searchSection:hover {
+	background-color: #3684df;
+	cursor: pointer;
+}
+
+
+
