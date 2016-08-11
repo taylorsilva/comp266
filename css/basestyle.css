@@ -107,5 +107,8 @@ input.searchSection:hover {
 	cursor: pointer;
 }
 
+div.searchSection select {
+	width: 200px;
+}
 
 
