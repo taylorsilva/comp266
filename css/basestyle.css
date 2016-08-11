@@ -2,3 +2,77 @@
 	Base stylsheet by Taylor Silva for COMP 266
 	Created: 28-07-2016;
 */
+
+/* CSS Resetting */
+
+* {
+	font-family: arial;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Navigation Style */
+
+header {
+	background-color: #4A90E2;
+	width: 100%;
+	height: 80px;
+}
+
+ul.navigation {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	float: right;
+	height: 100%;
+	display: inline-block;
+}
+
+ul.navigation li {
+	float: left;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul.navigation li a {
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #ffffff;
+	font-size: 20px;
+	float: left;
+	text-decoration: none;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+ul.navigation li:hover {
+	background-color: #3684df;
+}
+
+a.siteHeader {
+	color: white;
+	font-family: arial;
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 2px;
+	float: left;
+	margin: 0;
+	padding: 5px;
+	width: 50%;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
