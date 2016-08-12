@@ -9,9 +9,25 @@
 	font-family: arial;
 }
 
-html, body {
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html{
 	margin: 0;
 	padding: 0;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 
@@ -100,6 +116,7 @@ input.searchSection {
 	font-size: 25px;
 	background-color: #4A90E2;
 	border-style: none;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 input.searchSection:hover {
@@ -110,5 +127,43 @@ input.searchSection:hover {
 div.searchSection select {
 	width: 200px;
 }
+
+/* Featured post */
+
+div.featuredPosts {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 80%;
+	padding-top: 5px;
+	padding-bottom: 30px;
+	background-color: #D8D8D8;
+}
+
+div.featuredPost {
+	display: inline-block;
+	text-align: left;
+	padding: 18px;
+	margin-right: 10px;
+	margin-left: 10px;
+	max-width: 30%;
+	background-color: white;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+div.featuredPost:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+
+
+
+
+
+
+
+
 
 
