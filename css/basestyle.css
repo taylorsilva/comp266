@@ -222,7 +222,25 @@ div.postAdContainer {
 	width: 100%;
 }
 
+/* About Us page */
 
+.container {
+	text-align: center;
+	margin: 0 auto;
+	min-width: 30%;
+	max-width: 60%;
+	padding-bottom: 15px;
+	margin-top: 20px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.containerHeader {
+	background-color: #4A90E2;
+	color: #ffffff;
+	text-align: left;
+	font-size: 30px;
+	padding: 10px;
+}
 
 
 
