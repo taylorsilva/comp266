@@ -5,10 +5,6 @@
 
 /* CSS Resetting */
 
-* {
-	font-family: arial;
-}
-
 *,
 *:before,
 *:after {
@@ -20,6 +16,7 @@ html{
 	padding: 0;
 	height: 100%;
 	box-sizing: border-box;
+	font-family: arial;
 }
 
 body {
@@ -30,6 +27,36 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Helper classes */
+
+.container ul {
+	list-style-position: inside;
+	text-align: left;
+}
+
+.container {
+	text-align: center;
+	margin: 0 auto;
+	min-width: 10%;
+	max-width: 60%;
+	padding-bottom: 15px;
+	margin-top: 20px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.containerHeader {
+	background-color: #4A90E2;
+	color: #ffffff;
+	text-align: left;
+	font-size: 30px;
+	padding: 15px;
+}
+
+.container p {
+	text-align: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 /* Navigation Style */
 
@@ -46,7 +73,6 @@ ul.navigation {
 	overflow: hidden;
 	float: right;
 	height: 100%;
-	display: inline-block;
 }
 
 ul.navigation li {
@@ -68,6 +94,8 @@ ul.navigation li a {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -75,7 +103,7 @@ ul.navigation li:hover {
 	background-color: #3684df;
 }
 
-a.siteHeader {
+.siteHeader {
 	color: white;
 	font-family: arial;
 	font-size: 50px;
@@ -84,12 +112,14 @@ a.siteHeader {
 	letter-spacing: 2px;
 	float: left;
 	margin: 0;
-	padding: 5px;
+	margin-left: 5px;
 	width: 50%;
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -136,13 +166,13 @@ input.button:hover, input.button-l:hover {
 	cursor: pointer;
 }
 
-div.searchSection select {
+.searchSection select {
 	width: 200px;
 }
 
 /* Featured post */
 
-div.featuredPosts {
+.featuredPosts {
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 20px;
@@ -153,7 +183,7 @@ div.featuredPosts {
 	background-color: #D8D8D8;
 }
 
-div.featuredPost {
+.featuredPost {
 	display: inline-block;
 	text-align: left;
 	padding: 18px;
@@ -164,7 +194,7 @@ div.featuredPost {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-div.featuredPost:hover {
+.featuredPost:hover {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
@@ -192,7 +222,7 @@ footer a:hover {
 
 /* Post Ad Form */
 
-div.postAdContainer {
+.postAdContainer {
 	text-align: center;
 	margin: 0 auto;
 	width: 60%;
@@ -216,31 +246,7 @@ div.postAdContainer {
 
 /* About Us page */
 
-.container {
-	text-align: center;
-	margin: 0 auto;
-	min-width: 10%;
-	max-width: 60%;
-	padding-bottom: 15px;
-	margin-top: 20px;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-.containerHeader {
-	background-color: #4A90E2;
-	color: #ffffff;
-	text-align: left;
-	font-size: 30px;
-	padding: 15px;
-}
-
-.container p {
-	text-align: left;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-textarea.message {
+.message {
 	height: 100px;
 	width: 200px;
 }
@@ -259,13 +265,6 @@ table.stats {
 
 .stats tr:hover {
 	background-color: #F1F1F1;
-}
-
-/* Site Map page */
-
-.container ul {
-	list-style-position: inside;
-	text-align: left;
 }
 
 
