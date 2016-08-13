@@ -1,0 +1,45 @@
+/* Search Section */
+
+div.searchSection {
+	text-align: center;
+	padding-top: 30px;
+}
+
+span.searchSection {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+.searchSection select {
+	width: 200px;
+}
+
+/* Featured post */
+
+.featuredPosts {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 80%;
+	padding-top: 5px;
+	padding-bottom: 30px;
+	background-color: #D8D8D8;
+}
+
+.featuredPost {
+	display: inline-block;
+	text-align: left;
+	padding: 18px;
+	margin-right: 10px;
+	margin-left: 10px;
+	max-width: 30%;
+	background-color: white;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.featuredPost:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

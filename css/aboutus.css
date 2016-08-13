@@ -1,0 +1,22 @@
+/* About Us page */
+
+.message {
+	height: 100px;
+	width: 200px;
+}
+
+table.stats {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.stats td {
+	text-align: left;
+	padding: 10px;
+	margin-left: 20px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.stats tr:hover {
+	background-color: #F1F1F1;
+}
