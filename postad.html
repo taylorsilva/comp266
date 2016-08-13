@@ -18,51 +18,56 @@
 			</ul>
 		</header>
 
-		<h2>Post New Ad</h2>
-		<div>
-			<p>Sell your used textook by posting on our website. Buyers will contact you via our website.</p>
-			<form action="#">
-				<label for="firstname">First Name</label> <br>
-				<input type="text" name="firstName" id="firstname" required aria-required="true"> <br>
-				<label for="email">Email</label> <br>
-				<input type="text" name="email" id="email" required aria-required="true"> <br>
-				<label for="title">Textbook Title</label> <br>
-				<input type="text" name="title" id="title" required aria-required="true"> <br>
-				<label for="price">Price</label> <br>
-				<input type="number" name="price" id="price" required aria-required="true"> <br>
-				<label for="school">School</label> <br>
-				<select name="school" id="school required aria-required="true"">
-					<option value="athabasca">Athabasca University</option>
-					<option value="mcmaster">McMaster University</option>
-					<option value="waterloo">University of Waterloo</option>
-					<option value="toronto">University of Toronto</option>
-					<option value="britishcolumbia">University of British Columbia</option>
-				</select> <br>
-				<label for="department">Department</label> <br>
-				<select name="department" id="department" required aria-required="true">
-					<!-- Will be loaded through AJAX calls after previous input is selected -->
-					<option value="arts">Arts</option>
-					<option value="science">Science</option>
-					<option value="compsci">Computer Science</option>
-					<option value="business">Business</option>
-					<option value="english">English</option>
-				</select> <br>
-				<label for="coursecode">Course Code</label> <br>
-				<select name="courseCode" id="coursecode" required aria-required="true">
-					<!-- Will be loaded through AJAX calls after previous input is selected -->
-					<option value="1AB3">1AB3</option>
-					<option value="2AB3">2AB3</option>
-					<option value="3AK3">3AK3</option>
-					<option value="2EN3">2EN3</option>
-				</select> <br>
-				<label for="description">Description</label> <br>
-				<textarea name="description" rows="4" cols="8" id="description" required aria-required="true"></textarea> <br>
-				<label for="photos">Photo(s)</label> <br>
-				<input type="file" name="pics" accept="image/*" id="photos" multiple> <br>
-				<input type="submit" value="Submit Ad">
-			</form>
-		</div>
-		<br>
+			<div class="postAdContainer">
+				<h2 class="postAdHeader">Post New Ad</h2>
+				<div>
+					<form action="#">
+					<div class="formSection">
+						<label for="firstname">First Name</label> <br>
+						<input type="text" name="firstName" id="firstname" required aria-required="true"> <br>
+						<label for="email">Email</label> <br>
+						<input type="text" name="email" id="email" required aria-required="true"> <br>
+						<label for="title">Textbook Title</label> <br>
+						<input type="text" name="title" id="title" required aria-required="true"> <br>
+						<label for="price">Price</label> <br>
+						<input type="number" name="price" id="price" required aria-required="true"> <br>
+						<label for="school">School</label> <br>
+						<select name="school" id="school required aria-required="true"">
+							<option value="athabasca">Athabasca University</option>
+							<option value="mcmaster">McMaster University</option>
+							<option value="waterloo">University of Waterloo</option>
+							<option value="toronto">University of Toronto</option>
+							<option value="britishcolumbia">University of British Columbia</option>
+						</select> <br>
+						<label for="department">Department</label> <br>
+						<select name="department" id="department" required aria-required="true">
+							<!-- Will be loaded through AJAX calls after previous input is selected -->
+							<option value="arts">Arts</option>
+							<option value="science">Science</option>
+							<option value="compsci">Computer Science</option>
+							<option value="business">Business</option>
+							<option value="english">English</option>
+						</select> <br>
+						<label for="coursecode">Course Code</label> <br>
+						<select name="courseCode" id="coursecode" required aria-required="true">
+							<!-- Will be loaded through AJAX calls after previous input is selected -->
+							<option value="1AB3">1AB3</option>
+							<option value="2AB3">2AB3</option>
+							<option value="3AK3">3AK3</option>
+							<option value="2EN3">2EN3</option>
+						</select>
+					</div>
+					<div class="formSection">
+						<label for="description">Description</label> <br>
+						<textarea name="description" rows="4" cols="8" id="description" required aria-required="true"></textarea> <br>
+						<label for="photos">Photo(s)</label> <br>
+						<input type="file" name="pics" accept="image/*" id="photos" multiple>
+					</div>
+						<input type="submit" value="Submit Ad" class="button">
+					</form>
+				</div>
+			</div>
+
 		<footer>
 			<a href="sitemap.html">Site Map</a> |
 			&copy; 2016 Textbook Xchange |
