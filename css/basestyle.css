@@ -219,7 +219,7 @@ div.postAdContainer {
 .container {
 	text-align: center;
 	margin: 0 auto;
-	min-width: 30%;
+	min-width: 10%;
 	max-width: 60%;
 	padding-bottom: 15px;
 	margin-top: 20px;
@@ -261,6 +261,12 @@ table.stats {
 	background-color: #F1F1F1;
 }
 
+/* Site Map page */
+
+.container ul {
+	list-style-position: inside;
+	text-align: left;
+}
 
 
 
