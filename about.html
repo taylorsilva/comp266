@@ -31,7 +31,7 @@
 			</p>
 
 			<h4>Site Stats</h4>
-			<table>
+			<table class="stats">
 				<tr>
 					<td>Site Visitors (Unique)</td>
 					<td>4,234</td>
@@ -47,15 +47,16 @@
 			</table>
 
 			<h4>Contact Us</h4>
-			<p>If you have any questions or concerns regarding this website please contact us.</p>
-			<form action="mailto:silvat2@mcmaster.ca" method="post" enctype="text/plain">
+			<div>If you have any questions or concerns regarding this website please contact us.</div>
+			<br>
+			<form action="mailto:silvat2@mcmaster.ca" method="post" enctype="text/plain" class="formSection">
 				<label for="name">Your Name</label> <br>
 				<input type="text" name="name" id="name"> <br>
 				<label for="email">Your E-mail</label> <br>
 				<input type="text" name="email" for="email"> <br>
 				<label for="message">Your Message</label> <br>
-				<textarea name="message" id="message">Type your message here</textarea> <br>
-				<input type="submit" value="Send E-mail">
+				<textarea name="message" class="message">Type your message here</textarea>
+				<input type="submit" value="Send E-mail" class="button">
 			</form>
 		</div>
 
