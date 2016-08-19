@@ -5,12 +5,12 @@
 
 function readURL(input) {
 
-    if (input.files && input.files[0]) {
+    if (input.files[0]) {
         var reader = new FileReader();
         
         reader.onload = function (e) {
-            document.getElementById("123").src = e.target.result;
-            document.getElementById("123").style = "display: block";
+            document.getElementById("imgPreview").src = e.target.result;
+            document.getElementById("imgPreview").style = "display: block";
         }
 
         reader.readAsDataURL(input.files[0]);
