@@ -13,7 +13,7 @@ function previewImages(input) {
     	// put each image into the queue
     	for (var j = 0; j <= input.files.length - 1; j++) {
     		images.push(input.files[j]);
-    	};
+    	}
 
     	var reader = new FileReader();
 
@@ -36,12 +36,12 @@ function previewImages(input) {
 	            	setImage();
 	            } else{
 	            	// no images left, exits function
-	            };
-        	};
+	            }
+        	}
         	// Will set the url and remove it from the queue
         	var imageData = images.shift();
         	reader.readAsDataURL(imageData);
-    	};  
+    	}
 
     	// begin setting images
     	setImage();	
@@ -52,9 +52,9 @@ function previewImages(input) {
     		alert("You can only upload 4 photos");
     	} else {
     		// Unable to preview image(s) for other reason, fail silently
-    	};
-    };
-};
+    	}
+    }
+}
 
 function resetImageHtml () {
 	var imgElementId;
@@ -64,8 +64,8 @@ function resetImageHtml () {
 		var imgElement = document.getElementById(imgElementId);
 		imgElement.src = "";
 		imgElement.style = "";
-	};
-};
+	}
+}
 
 document.getElementById("photos").onchange = function(){
 	// reset HTML in case user has re-selected photos
