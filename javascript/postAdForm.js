@@ -25,7 +25,7 @@ function readURL(input) {
         		console.log(imgElementId);
         		var imgElement = document.getElementById(imgElementId);
 	            imgElement.src = e.target.result;
-	            imgElement.style = "display: block";
+	            imgElement.style = "display: inline-block";
 
 	            // increment counter to get right element ID
 	            i++;
