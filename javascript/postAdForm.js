@@ -3,9 +3,13 @@
 	of the website.
 */
 
-function previewImages(input, imgId, parentId, cssClass) {
-	// Ensure at least one image is selected and there's no more than 4
-    if (input.files[0] && (input.files.length <= 4)) {
+/* 
+	Inserts image elements for each given file up to the given max at the end of the 
+	given parent node and applies an ID and class to the image element.
+*/
+function previewImages(input, imgId, parentId, cssClass, maxImages) {
+	// Ensure at least one image is selected and there's no more than maxImagess
+    if (input.files[0] && (input.files.length <= maxImages)) {
     	// counter to keep track of the element ID to be modified
     	var i = 0; 
     	// Queue containing all the images
@@ -55,9 +59,9 @@ function previewImages(input, imgId, parentId, cssClass) {
     	setImage();	
 
     } else {
-    	// Error handling. Most likely case is more than 4 images selected
+    	// Error handling. Most likely case is more than maxImages selected
     	if (input.files.length > 4) {
-    		alert("You can only upload 4 photos");
+    		alert("You can only upload " + maxImages + " photos");
     	} else {
     		// Unable to preview image(s) for other reason, fail silently
     	}
@@ -82,5 +86,5 @@ function removeElements (elementId) {
 document.getElementById("photos").onchange = function(){
 	// reset HTML in case user has re-selected photos
 	removeElements("imgPreview");
-    previewImages(this, "imgPreview", "photoSection", "imagePreview");
+    previewImages(this, "imgPreview", "photoSection", "imagePreview", 4);
 };
