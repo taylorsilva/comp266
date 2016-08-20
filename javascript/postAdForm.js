@@ -3,7 +3,7 @@
 	of the website.
 */
 
-function readURL(input) {
+function previewImages(input) {
 	// Ensure at least one image is selected and there's no more than 4
     if (input.files[0] && (input.files.length <= 4)) {
     	// counter to keep track of the element ID to be modified
@@ -70,5 +70,5 @@ function resetImageHtml () {
 document.getElementById("photos").onchange = function(){
 	// reset HTML in case user has re-selected photos
 	resetImageHtml();
-    readURL(this);
+    previewImages(this);
 };
