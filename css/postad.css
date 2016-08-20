@@ -11,6 +11,6 @@
 
 .imagePreview {
 	max-width: 48%;
-	display: none;
+	display: inline-block;
 	padding-bottom: 5px;
 }
