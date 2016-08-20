@@ -50,7 +50,7 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
 	            	// no images left, exits function
 	            }
         	}
-        	// Will set the url and remove it from the queue
+        	// Will get the image data and remove it from the queue
         	var imageData = images.shift();
         	reader.readAsDataURL(imageData);
     	}
