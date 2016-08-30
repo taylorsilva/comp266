@@ -60,7 +60,7 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
 
     } else {
         // Error handling. Most likely case is more than maxImages selected
-        if (input.files.length > 4) {
+        if (input.files.length > maxImages) {
             alert("You can only upload " + maxImages + " photos");
         } else {
             // Unable to preview image(s) for other reason, fail silently
