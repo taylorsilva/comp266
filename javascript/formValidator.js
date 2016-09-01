@@ -94,7 +94,7 @@ function fieldListener (event, inputType, errorClass, successClass) {
 				evalInput(verifyFName(event.target));
 				break;
 			case TYPE_COURSECODE:
-				evalInput(verifyFName(event));				
+				evalInput(verifyFName(event.target));				
 				break;
 			default:
 				console.log("Unknow input type passed");
