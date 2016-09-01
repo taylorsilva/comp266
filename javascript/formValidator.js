@@ -113,7 +113,7 @@ function fieldListener (event, inputType, errorClass, successClass) {
 			};
 			break;
 		default:
-			console.log("Unknow input type passed")
-			break:
+			console.log("Unknow input type passed");
+			break;
 	}
 }
