@@ -15,7 +15,7 @@ var TYPE_COURSECODE = 6;
 /*
 	Main listener function/class? set to each input field in the form
 */
-function fieldListener (event, inputType, errorClass, successClass) {
+function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	/*
 		Private Helper functions
@@ -29,9 +29,9 @@ function fieldListener (event, inputType, errorClass, successClass) {
 	// evals a boolean function and sets its elements class accordingly 
 	function evalInput(inputValue) {
 		if (inputValue) {
-			setClass(event.target, successClass);
+			setClass(eventObj, successClass);
 		} else {
-			setClass(event.target, errorClass);
+			setClass(eventObj, errorClass);
 		};
 	}
 
@@ -76,25 +76,25 @@ function fieldListener (event, inputType, errorClass, successClass) {
 	function main() {
 		switch (inputType) {
 			case TYPE_FNAME:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_EMAIL:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_PRICE:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_TEXT:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_SCHOOL:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_DEPARTMENT:
-				evalInput(verifyFName(event.target));
+				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_COURSECODE:
-				evalInput(verifyFName(event.target));				
+				evalInput(verifyFName(eventObj));				
 				break;
 			default:
 				console.log("Unknow input type passed");

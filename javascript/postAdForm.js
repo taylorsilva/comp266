@@ -88,3 +88,8 @@ document.getElementById("photos").onchange = function(){
     removeElements("imgPreview");
     previewImages(this, "imgPreview", "photoSection", "imagePreview", 4);
 };
+
+// Set form validation listeners
+document.querySelector("#firstname").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_FNAME, "errorClass", "successClass");
+}, false);
