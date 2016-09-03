@@ -2,7 +2,7 @@
 	Creaed by: Taylor Silva
 */
 
-// Declaring constants first
+// Declaring constants, to be used when setting the listeners
 var TYPE_FNAME = 0;
 var TYPE_EMAIL = 1;
 var TYPE_PRICE = 2;
@@ -13,9 +13,10 @@ var TYPE_COURSECODE = 6;
 
 
 /*
-	Main listener function/class? set to each input field in the form
+	Main listener function/class? set to listen to each input field in the form
 */
 function fieldListener (eventObj, inputType, errorClass, successClass) {
+	//console.log(eventObj); // for debugging
 
 	/*
 		Private Helper functions
@@ -37,12 +38,16 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	/*
 		Individual input verification functions
-		Return boolean
+		returns boolean
 	*/
 
 	// Verify that a name has been entered
 	function verifyFName (element) {
-		// body...
+		if (element.value != "") {
+			return true;
+		} else {
+			return false;
+		};
 	}
 
 	// verify that an email address has been provided
@@ -57,20 +62,28 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	// verify that text has been entered
 	function verifyInputText (element) {
-		// body...
+		if (element.value != "") {
+			return true;
+		} else {
+			return false;
+		};
 	}
 
 	function verifySchool (element) {
-		// body...
+		// verify through AJAX call back to server
 	}
 
 	function verifyDepartment (element) {
-		// body...
+		// verify through AJAX call back to server
 	}
 
 	function verifyCourseCode (element) {
-		// body...
+		// verify through AJAX call back to server
 	}
+
+	/*
+	*	End of input verification functions
+	*/
 
 	// main function for this class?... javascript conventions are weird...
 	function main() {
@@ -102,5 +115,6 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 		}
 	}
 
+	// run this function!
 	main();
 }

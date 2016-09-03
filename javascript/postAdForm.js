@@ -29,7 +29,7 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
             var imgElementId = imgId + i;
             
             reader.onload = function (e) {
-                console.log(imgElementId); // For debugging
+                //console.log(imgElementId); // For debugging
 
                 // Create image element and set attributes
                 var imgElement = document.createElement("img");
@@ -83,11 +83,16 @@ function removeElements (elementId) {
     }
 }
 
+// Set listener on the upload button
 document.getElementById("photos").onchange = function(){
     // reset HTML in case user has re-selected photos
     removeElements("imgPreview");
     previewImages(this, "imgPreview", "photoSection", "imagePreview", 4);
 };
+
+/*
+*   Form Listeners
+*/
 
 // Set form validation listeners
 document.querySelector("#firstname").addEventListener("input", function(e) {
