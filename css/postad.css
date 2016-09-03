@@ -14,3 +14,15 @@
 	display: inline-block;
 	padding-bottom: 5px;
 }
+
+.errorClass {
+	border-color: #E53935;
+	border-style: solid;
+	background-color: #FFCDD2;
+}
+
+.successClass {
+	border-color: #43A047;
+	border-style: solid;
+	background-color: #C8E6C9;
+}
