@@ -49,6 +49,9 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 	// verify that a price has been entered
 	function verifyPrice (price) {
 		// remove dollar sign, if inserted
+		price = price.replace("$", "");
+		// verify that an number has been entered
+		return !isNaN(price);
 	}
 
 	// verify that text has been entered
