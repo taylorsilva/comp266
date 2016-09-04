@@ -96,7 +96,7 @@ document.getElementById("photos").onchange = function(){
 
 // Set form validation listeners
 document.querySelector("#firstname").addEventListener("input", function(e) {
-    fieldListener(e.target, TYPE_FNAME, "errorClass", "successClass");
+    fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
 }, false);
 
 document.querySelector("#email").addEventListener("input", function(e) {

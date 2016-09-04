@@ -3,7 +3,6 @@
 */
 
 // Declaring constants, to be used when setting the listeners
-var TYPE_FNAME = 0;
 var TYPE_EMAIL = 1;
 var TYPE_PRICE = 2;
 var TYPE_TEXT = 3;
@@ -41,44 +40,35 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 		returns boolean
 	*/
 
-	// Verify that a name has been entered
-	function verifyFName (element) {
-		if (element.value != "") {
-			return true;
-		} else {
-			return false;
-		};
-	}
-
 	// verify that an email address has been provided
-	function verifyEmail (element) {
+	function verifyEmail (emailAddress) {
 		var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return emailRegex.test(element.value);
+		return emailRegex.test(emailAddress);
 	}
 
 	// verify that a price has been entered
-	function verifyPrice (element) {
-		// body...
+	function verifyPrice (price) {
+		// remove dollar sign, if inserted
 	}
 
 	// verify that text has been entered
-	function verifyInputText (element) {
-		if (element.value != "") {
+	function verifyInputText (inputText) {
+		if (inputText != "") {
 			return true;
 		} else {
 			return false;
 		};
 	}
 
-	function verifySchool (element) {
+	function verifySchool (school) {
 		// verify through AJAX call back to server
 	}
 
-	function verifyDepartment (element) {
+	function verifyDepartment (department) {
 		// verify through AJAX call back to server
 	}
 
-	function verifyCourseCode (element) {
+	function verifyCourseCode (courseCode) {
 		// verify through AJAX call back to server
 	}
 
@@ -89,26 +79,23 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 	// main function for this class?... javascript conventions are weird...
 	function main() {
 		switch (inputType) {
-			case TYPE_FNAME:
-				evalInput(verifyFName(eventObj));
-				break;
 			case TYPE_EMAIL:
-				evalInput(verifyEmail(eventObj));
+				evalInput(verifyEmail(eventObj.value));
 				break;
 			case TYPE_PRICE:
-				evalInput(verifyPrice(eventObj));
+				evalInput(verifyPrice(eventObj.value));
 				break;
 			case TYPE_TEXT:
-				evalInput(verifyInputText(eventObj));
+				evalInput(verifyInputText(eventObj.value));
 				break;
 			case TYPE_SCHOOL:
-				evalInput(verifySchool(eventObj));
+				evalInput(verifySchool(eventObj.value));
 				break;
 			case TYPE_DEPARTMENT:
-				evalInput(verifyDepartment(eventObj));
+				evalInput(verifyDepartment(eventObj.value));
 				break;
 			case TYPE_COURSECODE:
-				evalInput(verifyCourseCode(eventObj));				
+				evalInput(verifyCourseCode(eventObj.value));				
 				break;
 			default:
 				console.log("Unknow input type passed");
