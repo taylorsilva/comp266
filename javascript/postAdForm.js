@@ -98,3 +98,27 @@ document.getElementById("photos").onchange = function(){
 document.querySelector("#firstname").addEventListener("input", function(e) {
     fieldListener(e.target, TYPE_FNAME, "errorClass", "successClass");
 }, false);
+
+document.querySelector("#email").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_EMAIL, "errorClass", "successClass");
+}, false);
+
+document.querySelector("#title").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
+}, false);
+
+document.querySelector("#price").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_PRICE, "errorClass", "successClass");
+}, false);
+
+document.querySelector("#school").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_SCHOOL, "errorClass", "successClass");
+}, false);
+
+document.querySelector("#department").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_DEPARTMENT, "errorClass", "successClass");
+}, false);
+
+document.querySelector("#courseCode").addEventListener("input", function(e) {
+    fieldListener(e.target, TYPE_COURSECODE, "errorClass", "successClass");
+}, false);

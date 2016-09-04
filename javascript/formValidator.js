@@ -52,7 +52,8 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	// verify that an email address has been provided
 	function verifyEmail (element) {
-		// body...
+		var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return emailRegex.test(element.value);
 	}
 
 	// verify that a price has been entered
@@ -92,22 +93,22 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 				evalInput(verifyFName(eventObj));
 				break;
 			case TYPE_EMAIL:
-				evalInput(verifyFName(eventObj));
+				evalInput(verifyEmail(eventObj));
 				break;
 			case TYPE_PRICE:
-				evalInput(verifyFName(eventObj));
+				evalInput(verifyPrice(eventObj));
 				break;
 			case TYPE_TEXT:
-				evalInput(verifyFName(eventObj));
+				evalInput(verifyInputText(eventObj));
 				break;
 			case TYPE_SCHOOL:
-				evalInput(verifyFName(eventObj));
+				evalInput(verifySchool(eventObj));
 				break;
 			case TYPE_DEPARTMENT:
-				evalInput(verifyFName(eventObj));
+				evalInput(verifyDepartment(eventObj));
 				break;
 			case TYPE_COURSECODE:
-				evalInput(verifyFName(eventObj));				
+				evalInput(verifyCourseCode(eventObj));				
 				break;
 			default:
 				console.log("Unknow input type passed");
