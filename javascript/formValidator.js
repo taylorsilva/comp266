@@ -39,9 +39,8 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	// called once response is returned to set the class
 	ajax.onreadystatechange = function () {
-		var response = ajax.responseText;
-		if (response != "") {
-			evalInput(response);
+		if (ajax.status == 200) { // Ensure HTTP status has returned OK 
+			evalInput(ajax.responseText);
 		};
 	}
 
