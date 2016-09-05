@@ -62,6 +62,10 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
         // Error handling. Most likely case is more than maxImages selected
         if (input.files.length > maxImages) {
             alert("You can only upload " + maxImages + " photos");
+            // remove files from upload input
+            input.value = "";
+            input.className = "errorClass";
+
         } else {
             // Unable to preview image(s) for other reason, fail silently
         }

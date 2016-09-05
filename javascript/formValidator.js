@@ -17,6 +17,11 @@ var TYPE_COURSECODE = 6;
 function fieldListener (eventObj, inputType, errorClass, successClass) {
 	//console.log(eventObj); // for debugging
 
+	// AJAX variables
+	var ajax = new XMLHttpRequest()
+				,method = "GET"
+				,url = "http://student.athabascau.ca/~taylorsi5/phpAJAX/formValidator.php"; // hard-coded the URL so it's easier to test on my local machine
+
 	/*
 		Private Helper functions
 	*/
@@ -64,15 +69,27 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 	}
 
 	function verifySchool (school) {
-		// verify through AJAX call back to server
+		ajax.open(method, url + "?school=" + school, true);
+		ajax.onreadystatechange = function () {
+			evalInput(ajax.responseText);
+		}
+		ajax.send();
 	}
 
 	function verifyDepartment (department) {
-		// verify through AJAX call back to server
+		ajax.open(method, url + "?department=" + department, true);
+		ajax.onreadystatechange = function () {
+			evalInput(ajax.responseText);
+		}
+		ajax.send();
 	}
 
 	function verifyCourseCode (courseCode) {
-		// verify through AJAX call back to server
+		ajax.open(method, url + "?coursecode=" + courseCode, true);
+		ajax.onreadystatechange = function () {
+			evalInput(ajax.responseText);
+		}
+		ajax.send();
 	}
 
 	/*
@@ -92,13 +109,14 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 				evalInput(verifyInputText(eventObj.value));
 				break;
 			case TYPE_SCHOOL:
-				evalInput(verifySchool(eventObj.value));
+				// Due to AJAX call, must implement evalInput on it's own
+				verifySchool(eventObj.value);
 				break;
 			case TYPE_DEPARTMENT:
-				evalInput(verifyDepartment(eventObj.value));
+				verifyDepartment(eventObj.value);
 				break;
 			case TYPE_COURSECODE:
-				evalInput(verifyCourseCode(eventObj.value));				
+				verifyCourseCode(eventObj.value);
 				break;
 			default:
 				console.log("Unknow input type passed");
