@@ -115,14 +115,14 @@ document.querySelector("#price").addEventListener("input", function(e) {
     fieldListener(e.target, TYPE_PRICE, "errorClass", "successClass");
 }, false);
 
-document.querySelector("#school").addEventListener("input", function(e) {
+document.querySelector("#school").addEventListener("change", function(e) {
     fieldListener(e.target, TYPE_SCHOOL, "errorClass", "successClass");
 }, false);
 
-document.querySelector("#department").addEventListener("input", function(e) {
+document.querySelector("#department").addEventListener("change", function(e) {
     fieldListener(e.target, TYPE_DEPARTMENT, "errorClass", "successClass");
 }, false);
 
-document.querySelector("#courseCode").addEventListener("input", function(e) {
+document.querySelector("#courseCode").addEventListener("change", function(e) {
     fieldListener(e.target, TYPE_COURSECODE, "errorClass", "successClass");
 }, false);
