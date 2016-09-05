@@ -22,6 +22,11 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 				,method = "GET"
 				,url = "http://student.athabascau.ca/~taylorsi5/phpAJAX/formValidator.php"; // hard-coded the URL so it's easier to test on my local machine
 
+	// called once response is returned to set the class
+	ajax.onreadystatechange = function () {
+			evalInput(ajax.responseText);
+	}
+
 	/*
 		Private Helper functions
 	*/
@@ -70,25 +75,16 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 
 	function verifySchool (school) {
 		ajax.open(method, url + "?school=" + school, true);
-		ajax.onreadystatechange = function () {
-			evalInput(ajax.responseText);
-		}
 		ajax.send();
 	}
 
 	function verifyDepartment (department) {
 		ajax.open(method, url + "?department=" + department, true);
-		ajax.onreadystatechange = function () {
-			evalInput(ajax.responseText);
-		}
 		ajax.send();
 	}
 
 	function verifyCourseCode (courseCode) {
 		ajax.open(method, url + "?coursecode=" + courseCode, true);
-		ajax.onreadystatechange = function () {
-			evalInput(ajax.responseText);
-		}
 		ajax.send();
 	}
 
