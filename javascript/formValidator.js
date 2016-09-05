@@ -1,5 +1,20 @@
 /*
 	Creaed by: Taylor Silva
+
+	How To Use:
+	To use this form validator, simply set a listener on the input you want to validate
+	and call the fieldListener() function
+
+	Example:
+	document.querySelector("[CSS Selector here]").addEventListener("[input/change]", function(e) {
+    	fieldListener(e.target, TYPE_[from constants], "errorClass", "successClass");
+	}, false);
+
+	- for the querySelector, I'd suggest using an #id if you want to reference a specific element
+	- errorClass and successClass are class names that you can specify in your CSS sheet. You can
+		use any name you want really
+	- you can set the listener to be called during 'input' or 'change', those work best for most 
+		browsers
 */
 
 // Declaring constants, to be used when setting the listeners
@@ -12,7 +27,7 @@ var TYPE_COURSECODE = 6;
 
 
 /*
-	Main listener function/class? set to listen to each input field in the form
+	Main listener function/class set to listen to each input field in the form
 */
 function fieldListener (eventObj, inputType, errorClass, successClass) {
 	//console.log(eventObj); // for debugging
