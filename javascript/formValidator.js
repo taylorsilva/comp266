@@ -17,7 +17,7 @@
 		browsers
 */
 
-// Declaring constants, to be used when setting the listeners
+// Declaring inputType constants, to be used when setting the listeners
 var TYPE_EMAIL = 1;
 var TYPE_PRICE = 2;
 var TYPE_TEXT = 3;
@@ -28,6 +28,10 @@ var TYPE_COURSECODE = 6;
 
 /*
 	Main listener function/class set to listen to each input field in the form
+	eventObj: 	Handle to the element this listener is set to
+	inputType: 	One of the above constants
+	errorClass: A css class to set the eventObj to if input is invalid
+	successClass: A css class to set the eventObj to if input is valid
 */
 function fieldListener (eventObj, inputType, errorClass, successClass) {
 	//console.log(eventObj); // for debugging
