@@ -126,7 +126,7 @@ function fieldListener (eventObj, inputType, errorClass, successClass) {
 				evalInput(verifyInputText(eventObj.value));
 				break;
 			case TYPE_SCHOOL:
-				// Due to AJAX call, must implement evalInput on it's own
+				// Due to AJAX call, must implement evalInput in ajax.onreadystatechange()
 				verifySchool(eventObj.value);
 				break;
 			case TYPE_DEPARTMENT:
