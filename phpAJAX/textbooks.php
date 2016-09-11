@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
 $masterTextbookList = array('01' => array('id' => '01',
 										'fName' => 'Jack',
 										'title' => 'English Basics',
