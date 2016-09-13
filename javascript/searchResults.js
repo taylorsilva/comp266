@@ -22,9 +22,11 @@ function loadResults () {
 //Bind to submit event for the search form
 $("input#submitButton").click(function (event) {
 	// animate out the featured posts
-	$(event.target).animate({opacity: "0"}, {queue: false, duration: 200});
-	// Delete featured post and replace with loading wheel
-	$("#featuredPost").replaceWith(loadingSpinner);
+	$("#featuredPost").animate({opacity: "0"}, {queue: false, duration: 400, 
+		complete: function() {
+			// Delete featured post and replace with loading wheel
+			$("#featuredPost").replaceWith(loadingSpinner);
+		}});
 	// Just for show, wait two seconds then replace the loader with search results
 	window.setTimeout(loadResults, 2000);
 });
