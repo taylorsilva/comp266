@@ -13,8 +13,16 @@ var loadingSpinner = '<div class="showbox">\
   <div>Finding Textbooks</div>\
 </div>';
 
+// Make AJAX call to server and display results in table
+function loadResults () {
+	// Make AJAX call
+	$.AJAX('http://student.athabascau.ca/~taylorsi5/phpAJAX/searchResults.php');
+}
+
 //Bind to submit event for the search form
-$("#searchForm").submit(function (event) {
+$("input#submitButton").click(function (event) {
 	// Delete featured post and replace with loading wheel
 	$("#featuredPost").replaceWith(loadingSpinner);
+	// Just for show, wait two seconds then replace the loader with search results
+	window.setTimeout(loadResults, 2000);
 });
