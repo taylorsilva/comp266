@@ -157,6 +157,12 @@ span.searchSection {
 table.results {
   border-collapse: collapse;
   margin: 0 auto;
+  margin-top: 20px;
+  min-width: 700px;
+}
+
+.results th {
+  text-align: left;
 }
 
 .results td {
