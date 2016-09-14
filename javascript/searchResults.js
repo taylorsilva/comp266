@@ -13,6 +13,9 @@ var loadingSpinner = '<div class="showbox" id="loadingSpinner">\
   <div>Finding Textbooks</div>\
 </div>';
 
+// store search result data for when user clicks for more details
+var textbooks;
+
 // Make AJAX call to server and display results in table
 function loadResults (replaceElement) {
 	//will have final html to replace loading with
@@ -25,6 +28,7 @@ function loadResults (replaceElement) {
 	// Make AJAX call to get search results which are in JSON format
 	var ajaxSearch = $.getJSON('http://student.athabascau.ca/~taylorsi5/phpAJAX/searchResults.php',
 						function(data) {
+							textbooks = data;
 							// Append rows to the table
 							$.each(data, function (key, item) {
 								resultsHtml +=
@@ -39,9 +43,6 @@ function loadResults (replaceElement) {
 							//Close table
 							resultsHtml += '</table>';
 							$(replaceElement).replaceWith(resultsHtml);
-							console.log(resultsHtml);
-							console.log(replaceElement);
-							console.log($('returnnothing'));
 						});
 }
 
