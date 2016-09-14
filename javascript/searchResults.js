@@ -27,7 +27,13 @@ function loadResults (replaceElement) {
 						function(data) {
 							// Append rows to the table
 							$.each(data, function (key, item) {
-
+								resultsHtml +=
+								'<tr class="itemRow">' +
+									'<td>$' + item['price'] + '</td>' +
+									'<td>' + item['title'] + '</td>' +
+									'<td>' + item['description'] + '</td>' +
+								'</td>'
+									
 							});
 
 							//Close table
