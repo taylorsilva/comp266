@@ -15,20 +15,28 @@ var loadingSpinner = '<div class="showbox" id="loadingSpinner">\
 
 // Make AJAX call to server and display results in table
 function loadResults (replaceElement) {
+	//will have final html to replace loading with
+	var resultsHtml = '<table class="results" id="featuredPost">\
+					<tr>\
+						<th>Price</th>\
+						<th>Title</th>\
+						<th>Description</th>\
+					</tr>'; 
 	// Make AJAX call to get search results which are in JSON format
-	var textbooks; //will store textbook objects
-	var resultsHtml; //will have final html to replace loading with
 	var ajaxSearch = $.getJSON('http://student.athabascau.ca/~taylorsi5/phpAJAX/searchResults.php',
 						function(data) {
-							console.log(data);
-							textbooks = data;
-						});
-	resultsHtml = '<table class="results">';
-	// Append rows to the table
+							// Append rows to the table
+							$.each(data, function (key, item) {
 
-	//Close table
-	resultsHtml += '</table>';
-	$(replaceElement).replaceWith(resultsHtml);
+							});
+
+							//Close table
+							resultsHtml += '</table>';
+							$(replaceElement).replaceWith(resultsHtml);
+							console.log(resultsHtml);
+							console.log(replaceElement);
+							console.log($('returnnothing'));
+						});
 }
 
 //Bind to submit event for the search form
@@ -40,5 +48,5 @@ $('input#submitButton').click(function (event) {
 			$('#featuredPost').replaceWith(loadingSpinner);
 		}});
 	// Just for show, wait two seconds then replace the loader with search results
-	window.setTimeout(loadResults('#loadingSpinner'), 2000);
+	window.setTimeout(function() {loadResults('#loadingSpinner')}, 2000);
 });
