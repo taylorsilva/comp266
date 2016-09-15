@@ -32,7 +32,7 @@ function loadResults (replaceElement) {
 							// Append rows to the table
 							$.each(data, function (key, item) {
 								resultsHtml +=
-								'<tr class="itemRow" key="' + key + '">' +
+								'<tr class="itemRow" data-key="' + key + '">' +
 									'<td>$' + item['price'] + '</td>' +
 									'<td>' + item['title'] + '</td>' +
 									'<td>' + item['description'].substr(0,30) + '</td>' +
@@ -58,5 +58,5 @@ $('input#submitButton').click(function (event) {
 });
 
 $(document).on('click', '.itemRow', function (event){
-	alert('testing');
+	alert($(this).data('key'));
 });
