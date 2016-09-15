@@ -97,7 +97,11 @@
 		<footer>
 			<a href="sitemap.html">Site Map</a> |
 			&copy; 2016 Textbook Xchange |
-			Last Modified: 11-08-2016
+			Last Modified: 
+			<script type="text/javascript">
+				lastModDate = new Date(document.lastModified);
+				document.write(lastModDate.getDate() + '-' + lastModDate.getMonth() + '-' + lastModDate.getFullYear());
+			</script>	
 		</footer>
 		<!-- jQuery loaded at the bottom to help with page loading -->
 		<script type="text/javascript" src="javascript/jquery.js"></script>

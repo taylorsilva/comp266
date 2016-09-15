@@ -72,7 +72,11 @@
 		<footer>
 			<a href="sitemap.html">Site Map</a> |
 			&copy; 2016 Textbook Xchange |
-			Last Modified: 20-07-2016
+			Last Modified: 
+			<script type="text/javascript">
+				lastModDate = new Date(document.lastModified);
+				document.write(lastModDate.getDate() + '-' + lastModDate.getMonth() + '-' + lastModDate.getFullYear());
+			</script>	
 
 			<!-- Load JS after DOM loads -->
 			<script src="javascript/formValidator.js"></script>
