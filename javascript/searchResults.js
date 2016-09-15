@@ -57,6 +57,32 @@ $('input#submitButton').click(function (event) {
 	window.setTimeout(function() {loadResults('#loadingSpinner')}, 2000);
 });
 
+/* 
+	Displaying detailed view of the selected listing/ad
+*/
+
+// Display detailed info inside a modal box
 $(document).on('click', '.itemRow', function (event){
-	alert($(this).data('key'));
+	// Get details for this listing
+	var listing = textbooks[$(this).data('key')];
+	// Create HTML to insert
+	var modalHtml = '<div id="listingDetails" class="modal">\
+					<div class="modal-content">\
+					  <div class="modal-header">\
+					    <span class="close">x</span>' +
+					    '<h2>' + listing['title'] + '</h2>\
+					  </div>\
+					  <div class="modal-body">\
+					    <p>Some text in the Modal Body</p>\
+					    <p>Some other text...</p>\
+					  </div>\
+					</div></div>';
+	console.log(modalHtml);
+	$('body').prepend(modalHtml);
 });
+
+// Close the modal
+$(document).on('click', '.close, #listingDetails', function (event){
+	$('#listingDetails').remove();
+});
+
