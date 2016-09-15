@@ -75,7 +75,8 @@ $(document).on('click', '.itemRow', function (event){
 					  <div class="modal-body">\
 					  <img src="' + listing['photo'] +
 					  '" alt="Image of ' + listing['title'] + '">' +
-
+					  '<p>Price: $' + listing['price'] + '</p>' +
+					  '<p>Description: ' + listing['description'] + '</p>' +
 					  '</div>\
 					</div></div>';
 	console.log(modalHtml);
@@ -84,6 +85,8 @@ $(document).on('click', '.itemRow', function (event){
 
 // Close the modal
 $(document).on('click', '.close, #listingDetails', function (event){
-	$('#listingDetails').remove();
+	if ($(event.target).hasClass('close') | $(event.target).hasClass('modal')) {
+		$('#listingDetails').remove();
+	};
 });
 
