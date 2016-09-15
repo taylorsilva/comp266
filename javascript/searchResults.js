@@ -80,6 +80,16 @@ $(document).on('click', '.itemRow', function (event){
 					  '<p>Seller: ' + listing['fName'] + '</p>' +
 					  '<p>Price: $' + listing['price'] + '</p>' +
 					  '<p>Description: ' + listing['description'] + '</p>' +
+					  //Form used to submit message to the seller
+					  '<form action="#" id="messageSeller">\
+					  	<label for="firstname">First Name</label> <br>\
+						<input type="text" name="firstName" id="firstName" required aria-required="true"> <br>\
+						<label for="email">Email</label> <br>\
+						<input type="text" name="email" id="email" required aria-required="true"> <br>\
+						<label for="message">Message</label> <br>\
+						<textarea name="message" rows="6" cols="30" id="message" required aria-required="true"></textarea> <br>\
+						<input type="submit" value="Message Seller" class="button">\
+					  </form>' +
 					  '</div>\
 					</div></div>';
 	console.log(modalHtml);
@@ -93,3 +103,13 @@ $(document).on('click', '.close, #listingDetails', function (event){
 	};
 });
 
+// Message Seller form validation listeners
+$(document).on('input', '#firstName', function (e) {
+	fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
+});
+$(document).on('input', '#email', function (e) {
+	fieldListener(e.target, TYPE_EMAIL, "errorClass", "successClass");
+});
+$(document).on('input', '#message', function (e) {
+	fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
+});

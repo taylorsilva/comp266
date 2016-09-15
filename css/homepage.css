@@ -244,9 +244,13 @@ Source: http://www.w3schools.com/howto/howto_css_modals.asp
 
 .modal-body {
   padding: 2px 16px;
+  overflow: auto;
 }
 
 .modal img {
   width: 40%;
   height: auto;
+  float: left;
+  margin: 20px
+
 }
