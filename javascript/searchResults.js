@@ -56,3 +56,7 @@ $('input#submitButton').click(function (event) {
 	// Just for show, wait two seconds then replace the loader with search results
 	window.setTimeout(function() {loadResults('#loadingSpinner')}, 2000);
 });
+
+$(document).on('click', '.itemRow', function (event){
+	alert('testing');
+});
