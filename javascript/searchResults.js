@@ -46,7 +46,7 @@ function loadResults (replaceElement) {
 }
 
 //Bind to submit event for the search form
-$('input#submitButton').click(function (event) {
+$('#searchForm').submit(function (event) {
 	// animate out the featured posts
 	$('#featuredPost').animate({opacity: '0'}, {queue: false, duration: 400, 
 		complete: function() {
@@ -55,6 +55,8 @@ $('input#submitButton').click(function (event) {
 		}});
 	// Just for show, wait two seconds then replace the loader with search results
 	window.setTimeout(function() {loadResults('#loadingSpinner')}, 2000);
+	// stop form from doing GET request
+	event.preventDefault();
 });
 
 /* 
@@ -75,6 +77,7 @@ $(document).on('click', '.itemRow', function (event){
 					  <div class="modal-body">\
 					  <img src="' + listing['photo'] +
 					  '" alt="Image of ' + listing['title'] + '">' +
+					  '<p>Seller: ' + listing['fName'] + '</p>' +
 					  '<p>Price: $' + listing['price'] + '</p>' +
 					  '<p>Description: ' + listing['description'] + '</p>' +
 					  '</div>\
