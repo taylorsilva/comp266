@@ -32,12 +32,11 @@ function loadResults (replaceElement) {
 							// Append rows to the table
 							$.each(data, function (key, item) {
 								resultsHtml +=
-								'<tr class="itemRow">' +
+								'<tr class="itemRow" key="' + key + '">' +
 									'<td>$' + item['price'] + '</td>' +
 									'<td>' + item['title'] + '</td>' +
-									'<td>' + item['description'] + '</td>' +
+									'<td>' + item['description'].substr(0,30) + '</td>' +
 								'</td>'
-									
 							});
 
 							//Close table
