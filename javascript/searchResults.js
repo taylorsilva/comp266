@@ -73,9 +73,10 @@ $(document).on('click', '.itemRow', function (event){
 					    '<h2>' + listing['title'] + '</h2>\
 					  </div>\
 					  <div class="modal-body">\
-					    <p>Some text in the Modal Body</p>\
-					    <p>Some other text...</p>\
-					  </div>\
+					  <img src="' + listing['photo'] +
+					  '" alt="Image of ' + listing['title'] + '">' +
+
+					  '</div>\
 					</div></div>';
 	console.log(modalHtml);
 	$('body').prepend(modalHtml);

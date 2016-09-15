@@ -242,4 +242,11 @@ Source: http://www.w3schools.com/howto/howto_css_modals.asp
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal img {
+  width: 40%;
+  height: auto;
+}
