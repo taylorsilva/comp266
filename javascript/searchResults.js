@@ -35,7 +35,7 @@ function loadResults (replaceElement) {
 								'<tr class="itemRow" data-key="' + key + '">' +
 									'<td>$' + item['price'] + '</td>' +
 									'<td>' + item['title'] + '</td>' +
-									'<td>' + item['description'].substr(0,30) + '</td>' +
+									'<td>' + item['description'].substr(0,30) + '...</td>' +
 								'</td>'
 							});
 
