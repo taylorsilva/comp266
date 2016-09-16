@@ -92,7 +92,6 @@ $(document).on('click', '.itemRow', function (event){
 					  </form>' +
 					  '</div>\
 					</div></div>';
-	console.log(modalHtml);
 	$('body').prepend(modalHtml);
 });
 
