@@ -41,5 +41,22 @@ $schoolInfo = array('athabasca' => array('name' => 'Athhbasca University'
 														,'JRNL' => array('100','503','515','520','533','534','539','548','549','550','555')
 														,'SOWK' => array('200','201','305','310','315','320','335','337','400','405','415'))));
 
+if (isset($_GET['school'])) {
+	// check that school is within our db
+	if (isset($schoolInfo[$_GET['school']])) {
+		//Return JSON of courses
+		$courses = $schoolInfo[$_GET['school']]['courses'];
+		print(json_encode($courses));
+	} else {
+		print('error');
+	}
+} else { // nothing set, return JSON of schoolKey => schoolName
+	$schools = array();
+	foreach ($schoolInfo as $key => $value) {
+		$schools[$key] = $value['name'];
+	}
+	print(json_encode($schools));
+}
+
 
 ?>
