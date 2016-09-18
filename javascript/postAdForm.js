@@ -1,12 +1,15 @@
 /* 
 	The below code only pretains to the <form> on the Post Ad page
 	of the website.
+    Requires jQuery 3.1.0
 */
 
-/* 
+/*************************************************************
+                Start Image Preview
 	Inserts image elements for each given file up to the given max at the end of the 
 	given parent node and applies an ID and class to the image element.
-*/
+*************************************************************/
+
 function previewImages(input, imgId, parentId, cssClass, maxImages) {
     // Ensure at least one image is selected and there's no more than maxImagess
     if (input.files[0] && (input.files.length <= maxImages)) {
@@ -32,7 +35,7 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
                 //console.log(imgElementId); // For debugging
 
                 // Create image element and set attributes
-                var imgElement = document.createElement("img");
+                var imgElement = document.createElement('img');
                 imgElement.src = e.target.result;
                 imgElement.className = cssClass;
                 imgElement.id = imgElementId; 
@@ -61,10 +64,10 @@ function previewImages(input, imgId, parentId, cssClass, maxImages) {
     } else {
         // Error handling. Most likely case is more than maxImages selected
         if (input.files.length > maxImages) {
-            alert("You can only upload " + maxImages + " photos");
+            alert('You can only upload ' + maxImages + ' photos');
             // remove files from upload input
-            input.value = "";
-            input.className = "errorClass";
+            input.value = '';
+            input.className = 'errorClass';
 
         } else {
             // Unable to preview image(s) for other reason, fail silently
@@ -88,41 +91,57 @@ function removeElements (elementId) {
 }
 
 // Set listener on the upload button
-document.getElementById("photos").onchange = function(){
+document.getElementById('photos').onchange = function(){
     // reset HTML in case user has re-selected photos
-    removeElements("imgPreview");
-    previewImages(this, "imgPreview", "photoSection", "imagePreview", 4);
+    removeElements('imgPreview');
+    previewImages(this, 'imgPreview', 'photoSection', 'imagePreview', 4);
 };
 
-/*
-*   Form Listeners
-*/
+/*******************************
+    End Image Preview
+*******************************/
 
-// Set form validation listeners
-document.querySelector("#firstname").addEventListener("input", function(e) {
-    fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
-}, false);
+/*******************************
+*   Form Validation Listeners
+*******************************/
 
-document.querySelector("#email").addEventListener("input", function(e) {
-    fieldListener(e.target, TYPE_EMAIL, "errorClass", "successClass");
-}, false);
+$(document).on('input', '#firstName', function (e) {
+    fieldListener(e.target, TYPE_TEXT, 'errorClass', 'successClass');
+});
 
-document.querySelector("#title").addEventListener("input", function(e) {
-    fieldListener(e.target, TYPE_TEXT, "errorClass", "successClass");
-}, false);
+$(document).on('input', '#email', function (e) {
+    fieldListener(e.target, TYPE_EMAIL, 'errorClass', 'successClass');
+});
 
-document.querySelector("#price").addEventListener("input", function(e) {
-    fieldListener(e.target, TYPE_PRICE, "errorClass", "successClass");
-}, false);
+$(document).on('input', '#title', function (e) {
+    fieldListener(e.target, TYPE_TEXT, 'errorClass', 'successClass');
+});
 
-document.querySelector("#school").addEventListener("change", function(e) {
-    fieldListener(e.target, TYPE_SCHOOL, "errorClass", "successClass");
-}, false);
+$(document).on('input', '#price', function (e) {
+    fieldListener(e.target, TYPE_PRICE, 'errorClass', 'successClass');
+});
 
-document.querySelector("#department").addEventListener("change", function(e) {
-    fieldListener(e.target, TYPE_DEPARTMENT, "errorClass", "successClass");
-}, false);
+$(document).on('change', '#school', function (e) {
+    fieldListener(e.target, TYPE_SCHOOL, 'errorClass', 'successClass');
+});
 
-document.querySelector("#courseCode").addEventListener("change", function(e) {
-    fieldListener(e.target, TYPE_COURSECODE, "errorClass", "successClass");
-}, false);
+$(document).on('change', '#department', function (e) {
+    fieldListener(e.target, TYPE_DEPARTMENT, 'errorClass', 'successClass');
+});
+
+$(document).on('change', '#courseCode', function (e) {
+    fieldListener(e.target, TYPE_COURSECODE, 'errorClass', 'successClass');
+});
+
+/**********************************
+    End Form Validation Listeners
+***********************************/
+
+/******************************
+    Start ISBN autofill
+*******************************/
+
+
+/******************************
+    End ISBN autofill
+*******************************/
