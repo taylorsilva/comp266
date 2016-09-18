@@ -50,3 +50,25 @@ $(document).on('change', '#school', function (e) {
 	ajax.open(method, url + '?school=' + $('#school').val(), true);
 	ajax.send();
 });
+
+// Load course code based on the selected school
+$(document).on('change', '#department', function (e) {
+	// load courses
+	ajax.onreadystatechange = function () {
+		if (ajax.status == 200 && ajax.readyState == 4) {
+			var coursecodes = JSON.parse(ajax.responseText)[$('#department').val()];
+			//clear out current options for department
+			$('#coursecode').empty();
+			// Insert new options for department
+			$.each(coursecodes, function (key, value) {
+				$('#coursecode').append($('<option>', {
+					value: value,
+					text: value
+				}));
+			})
+		};
+	};
+
+	ajax.open(method, url + '?school=' + $('#school').val(), true);
+	ajax.send();
+});
