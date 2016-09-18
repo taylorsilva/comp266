@@ -29,14 +29,24 @@ $(document).ready(function () {
 	ajax.send();
 });
 
+// Load departments based on the selected school
 $(document).on('change', '#school', function (e) {
 	// load courses
 	ajax.onreadystatechange = function () {
 		if (ajax.status == 200 && ajax.readyState == 4) {
-
+			var courses = JSON.parse(ajax.responseText);
+			//clear out current options for department
+			$('#department').empty();
+			// Insert new options for department
+			$.each(courses, function (key, value) {
+				$('#department').append($('<option>', {
+					value: key,
+					text: key
+				}));
+			})
 		};
 	};
 
-	ajax.open(method, url, true);
+	ajax.open(method, url + '?school=' + $('#school').val(), true);
 	ajax.send();
 });
