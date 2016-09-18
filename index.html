@@ -25,32 +25,19 @@
 				<span class="searchSection">
 					<label for="school">School:</label> <br>
 					<select name="school" id="school" required aria-required="true">
-						<option value="athabasca">Athabasca University</option>
-						<option value="mcmaster">McMaster University</option>
-						<option value="waterloo">University of Waterloo</option>
-						<option value="toronto">University of Toronto</option>
-						<option value="britishcolumbia">University of British Columbia</option>
+						<option value="default">Select a school</option>
 					</select>
 				</span>
 				<span class="searchSection">
 					<label for="department">Department:</label> <br>
 					<select name="department" id="department" required aria-required="true">
-						<!-- Will be loaded through AJAX calls after previous is selected -->
-						<option value="arts">Arts</option>
-						<option value="science">Science</option>
-						<option value="compsci">Computer Science</option>
-						<option value="business">Business</option>
-						<option value="english">English</option>
+						<option value="default">------</option>
 					</select>
 				</span>
 				<span class="searchSection">
 					<label for="coursecode">Course Code:</label> <br>
 					<select name="courseCode" id="coursecode" required aria-required="true">
-						<!-- Will be loaded through AJAX calls after previous is selected -->
-						<option value="1AB3">1AB3</option>
-						<option value="2AB3">2AB3</option>
-						<option value="3AK3">3AK3</option>
-						<option value="2EN3">2EN3</option>
+						<option value="default">------</option>
 					</select>
 				</span>
 				<input type="submit" value="Find Textbooks" class="button-l" id="submitButton">
@@ -105,7 +92,8 @@
 		</footer>
 		<!-- jQuery loaded at the bottom to help with page loading -->
 		<script type="text/javascript" src="javascript/jquery.js"></script>
-		<script src="javascript/formValidator.js"></script>
+		<script type="text/javascript" src="javascript/courseSelector.js"></script>
+		<script type="text/javascript" src="javascript/formValidator.js"></script>
 		<script type="text/javascript" src="javascript/searchResults.js"></script>
 	</body>
 </html>

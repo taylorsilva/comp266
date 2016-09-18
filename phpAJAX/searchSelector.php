@@ -1,5 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+header('Content-type: application/json');
 
 /*	Sources for school info
 	https://courses.students.ubc.ca/cs/main?pname=subjarea
@@ -8,7 +9,7 @@ header('Access-Control-Allow-Origin: *');
 	http://www.athabascau.ca/course/
 */
 
-$schoolInfo = array('athabasca' => array('name' => 'Athhbasca University'
+$schoolInfo = array('athabasca' => array('name' => 'Athabasca University'
 									,'courses' => array('ACCT' => array('245','250','253','351','352','355','356','390')
 														,'COMP' => array('200','206','210', '214', '230', '266', '268', '272')
 														,'ENGL' => array('211','212','255','302','303','304','305','306')
@@ -46,7 +47,7 @@ if (isset($_GET['school'])) {
 	if (isset($schoolInfo[$_GET['school']])) {
 		//Return JSON of courses
 		$courses = $schoolInfo[$_GET['school']]['courses'];
-		print(json_encode($courses));
+		echo json_encode($courses, JSON_HEX_QUOT);
 	} else {
 		print('error');
 	}
@@ -55,7 +56,7 @@ if (isset($_GET['school'])) {
 	foreach ($schoolInfo as $key => $value) {
 		$schools[$key] = $value['name'];
 	}
-	print(json_encode($schools));
+	echo json_encode($schools);
 }
 
 

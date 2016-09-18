@@ -1,5 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+header('Content-type: application/json');
 // This is all dummy data just to proof-of-concept my textbook website
 // This page will always return a random set of 10 textbooks from a list of 30
 
