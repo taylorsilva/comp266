@@ -34,28 +34,15 @@
 						<input type="text" name="price" id="price" required aria-required="true"> <br>
 						<label for="school">School</label> <br>
 						<select name="school" id="school" required aria-required="true">
-							<option value="athabasca">Athabasca University</option>
-							<option value="mcmaster">McMaster University</option>
-							<option value="waterloo">University of Waterloo</option>
-							<option value="uoft">University of Toronto</option>
-							<option value="ubc">University of British Columbia</option>
+							<option value="default">Select a school</option>
 						</select> <br>
 						<label for="department">Department</label> <br>
 						<select name="department" id="department" required aria-required="true">
-							<!-- Will be loaded through AJAX calls after previous input is selected -->
-							<option value="arts">Arts</option>
-							<option value="science">Science</option>
-							<option value="compsci">Computer Science</option>
-							<option value="business">Business</option>
-							<option value="english">English</option>
+							<option value="default">------</option>
 						</select> <br>
 						<label for="courseCode">Course Code</label> <br>
 						<select name="courseCode" id="courseCode" required aria-required="true">
-							<!-- Will be loaded through AJAX calls after previous input is selected -->
-							<option value="1AB3">1AB3</option>
-							<option value="2AB3">2AB3</option>
-							<option value="3AK3">3AK3</option>
-							<option value="2EN3">2EN3</option>
+							<option value="default">------</option>
 						</select>
 					</div>
 					<div class="formSection" id="photoSection">
@@ -79,8 +66,10 @@
 			</script>	
 
 			<!-- Load JS after DOM loads -->
-			<script src="javascript/formValidator.js"></script>
-			<script src="javascript/postAdForm.js"></script>
+			<script type="text/javascript" src="javascript/jquery.js"></script>
+			<script type="text/javascript" src="javascript/formValidator.js"></script>
+			<script type="text/javascript" src="javascript/courseSelector.js"></script>
+			<script type="text/javascript" src="javascript/postAdForm.js"></script>
 		</footer>
 	</body>
 </html>
