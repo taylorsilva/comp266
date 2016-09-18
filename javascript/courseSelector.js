@@ -40,7 +40,8 @@ function loadDepartments () {
 					value: key,
 					text: key
 				}));
-			})
+			});
+			loadCourseCodes();
 		};
 	};
 
@@ -61,7 +62,7 @@ function loadCourseCodes () {
 					value: value,
 					text: value
 				}));
-			})
+			});
 		};
 	};
 
