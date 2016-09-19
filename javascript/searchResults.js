@@ -63,10 +63,41 @@ $('#searchForm').submit(function (event) {
 	Displaying detailed view of the selected listing/ad
 */
 
+function getNewPrice (isbn) {
+	var ajax = new XMLHttpRequest()
+				,method = "GET"
+				,url = "http://student.athabascau.ca/~taylorsi5/phpAJAX/booksrun.php?isbn=" + isbn;
+
+	// call back function that returns result
+	ajax.onreadystatechange = function () {
+		if (ajax.status == 200 && ajax.readyState == 4) {
+			var result = JSON.parse(ajax.responseText);
+			if (result.result.status == 'success') { // We got data to process!
+				var data = result.result.text // stores the possible prices to display
+				// test New, Good, Average, and display the first one that returns a price
+				if (data.New.Buy != 'Not available') {
+					$('#priceOfNew').append(data.New.Buy);
+				} else if (data.Good.Buy != 'Not available') {
+					$('#priceOfNew').append(data.Good.Buy);
+				} else if (data.Average.Buy != 'Not available') {
+					$('#priceOfNew').append(data.Average.Buy);
+				} else {
+					// do nothing
+				};
+			};
+		};
+	};
+
+	ajax.open(method, url, true);
+	ajax.send();
+}
+
 // Display detailed info inside a modal box
 $(document).on('click', '.itemRow', function (event){
 	// Get details for this listing
 	var listing = textbooks[$(this).data('key')];
+	// Get pricing details for comparison 
+	var priceOfNew = getNewPrice(listing['isbn']);
 	// Create HTML to insert
 	var modalHtml = '<div id="listingDetails" class="modal">\
 					<div class="modal-content">\
@@ -78,7 +109,8 @@ $(document).on('click', '.itemRow', function (event){
 					  <img src="' + listing['photo'] +
 					  '" alt="Image of ' + listing['title'] + '">' +
 					  '<p>Seller: ' + listing['fName'] + '</p>' +
-					  '<p>Price: $' + listing['price'] + '</p>' +
+					  '<p>Seller\'s Price: $' + listing['price'] + '</p>' +
+					  '<p id="priceOfNew">Price of a New Textbook: $</p>' +
 					  '<p>Description: ' + listing['description'] + '</p>' +
 					  //Form used to submit message to the seller
 					  '<form action="#" id="messageSeller">\
