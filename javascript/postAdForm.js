@@ -141,6 +141,39 @@ $(document).on('change', '#courseCode', function (e) {
     Start ISBN autofill
 *******************************/
 
+// Set listener on ISBN input
+$(document).on('input', '#isbn', function (e) {
+    var isbn = $(e.target).val();
+    // Check that it's a valid ISBN-13
+    if (isbn.length == 13) {
+        if (!isNaN(isbn)) {
+            var ajax = new XMLHttpRequest()
+                ,method = "GET"
+                ,url = "http://student.athabascau.ca/~taylorsi5/phpAJAX/isbndb.php?isbn=" + isbn;
+            // callback method to set input fields
+            ajax.onreadystatechange = function () {
+                if (ajax.status == 200 && ajax.readyState == 4) {
+                    var response = JSON.parse(ajax.responseText);
+                    // check that a textbook was returned by checking that the error variable doesn't exist
+                    if (typeof response.error == 'undefined') {
+                        // set the title
+                        var data = response.data[0];
+                        $('#title').val(data.title);
+                        // set the author
+                        var author = data.author_data[0]
+                        $('#author').val(author.name);
+                    } else { // clear the title and author inputs
+                        $('#title').val('');
+                        $('#author').val('');
+                    };
+                };
+            };
+
+            ajax.open(method, url, true);
+            ajax.send();
+        };
+    };
+});
 
 /******************************
     End ISBN autofill
