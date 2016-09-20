@@ -120,7 +120,7 @@ $(document).on('click', '.itemRow', function (event){
 						<input type="text" name="email" id="email" required aria-required="true"> <br>\
 						<label for="message">Message</label> <br>\
 						<textarea name="message" rows="6" cols="30" id="message" required aria-required="true"></textarea> <br>\
-						<input type="submit" value="Message Seller" class="button">\
+						<input type="submit" value="Message Seller" class="button" style="clear:both;">\
 					  </form>' +
 					  '</div>\
 					</div></div>';
