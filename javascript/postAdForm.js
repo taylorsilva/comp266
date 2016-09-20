@@ -172,6 +172,10 @@ $(document).on('input', '#isbn', function (e) {
             ajax.open(method, url, true);
             ajax.send();
         };
+    } else {
+        // clear title and author input fields
+        $('#title').val('');
+        $('#author').val('');
     };
 });
 
