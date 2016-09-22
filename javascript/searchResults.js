@@ -32,11 +32,11 @@ function loadResults (replaceElement) {
 							// Append rows to the table
 							$.each(data, function (key, item) {
 								resultsHtml +=
-								'<tr class="itemRow" data-key="' + key + '">' +
+								'<tr class="itemRow" data-key="' + key + '" tabindex="0">' +
 									'<td>$' + item['price'] + '</td>' +
 									'<td>' + item['title'] + '</td>' +
 									'<td>' + item['description'].substr(0,30) + '...</td>' +
-								'</td>'
+								'</td>';
 							});
 
 							//Close table
@@ -93,43 +93,45 @@ function getNewPrice (isbn) {
 }
 
 // Display detailed info inside a modal box
-$(document).on('click', '.itemRow', function (event){
-	// Get details for this listing
-	var listing = textbooks[$(this).data('key')];
-	// Get pricing details for comparison 
-	var priceOfNew = getNewPrice(listing['isbn']);
-	// Create HTML to insert
-	var modalHtml = '<div id="listingDetails" class="modal">\
-					<div class="modal-content">\
-					  <div class="modal-header">\
-					    <span class="close">x</span>' +
-					    '<h2>' + listing['title'] + '</h2>\
-					  </div>\
-					  <div class="modal-body">\
-					  <img src="' + listing['photo'] +
-					  '" alt="Image of ' + listing['title'] + '">' +
-					  '<p>Seller: ' + listing['fName'] + '</p>' +
-					  '<p>Seller\'s Price: $' + listing['price'] + '</p>' +
-					  '<p id="priceOfNew">Price of a New Textbook: $</p>' +
-					  '<p>Description: ' + listing['description'] + '</p>' +
-					  //Form used to submit message to the seller
-					  '<form action="#" id="messageSeller">\
-					  	<label for="firstname">First Name</label> <br>\
-						<input type="text" name="firstName" id="firstName" required aria-required="true"> <br>\
-						<label for="email">Email</label> <br>\
-						<input type="text" name="email" id="email" required aria-required="true"> <br>\
-						<label for="message">Message</label> <br>\
-						<textarea name="message" rows="6" cols="30" id="message" required aria-required="true"></textarea> <br>\
-						<input type="submit" value="Message Seller" class="button" style="clear:both;">\
-					  </form>' +
-					  '</div>\
-					</div></div>';
-	$('body').prepend(modalHtml);
+$(document).on('click keydown', '.itemRow', function (event){
+	if (!([9,16,17,18,91,93,18,27].includes(event.which))) { 
+		// Get details for this listing
+		var listing = textbooks[$(this).data('key')];
+		// Get pricing details for comparison 
+		var priceOfNew = getNewPrice(listing['isbn']);
+		// Create HTML to insert
+		var modalHtml = '<div id="listingDetails" class="modal">\
+						<div class="modal-content">\
+						  <div class="modal-header">\
+						    <span class="close">x</span>' +
+						    '<h2>' + listing['title'] + '</h2>\
+						  </div>\
+						  <div class="modal-body">\
+						  <img src="' + listing['photo'] +
+						  '" alt="Image of ' + listing['title'] + '">' +
+						  '<p>Seller: ' + listing['fName'] + '</p>' +
+						  '<p>Seller\'s Price: $' + listing['price'] + '</p>' +
+						  '<p id="priceOfNew">Price of a New Textbook: $</p>' +
+						  '<p>Description: ' + listing['description'] + '</p>' +
+						  //Form used to submit message to the seller
+						  '<form action="#" id="messageSeller">\
+						  	<label for="firstname">First Name</label> <br>\
+							<input type="text" name="firstName" id="firstName" required aria-required="true" autofocus> <br>\
+							<label for="email">Email</label> <br>\
+							<input type="text" name="email" id="email" required aria-required="true"> <br>\
+							<label for="message">Message</label> <br>\
+							<textarea name="message" rows="6" cols="30" id="message" required aria-required="true"></textarea> <br>\
+							<input type="submit" value="Message Seller" class="button" style="clear:both;">\
+						  </form>' +
+						  '</div>\
+						</div></div>';
+		$('body').prepend(modalHtml);
+	}
 });
 
 // Close the modal
-$(document).on('click', '.close, #listingDetails', function (event){
-	if ($(event.target).hasClass('close') | $(event.target).hasClass('modal')) {
+$(document).on('click keydown', '.close, #listingDetails', function (event){
+	if ($(event.target).hasClass('close') | $(event.target).hasClass('modal') | event.which == 27) {
 		$('#listingDetails').remove();
 	};
 });
