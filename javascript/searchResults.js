@@ -126,6 +126,8 @@ $(document).on('click keydown', '.itemRow', function (event){
 						  '</div>\
 						</div></div>';
 		$('body').prepend(modalHtml);
+		// set focus to modal
+		$('#firstName').focus();
 	}
 });
 
